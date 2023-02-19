@@ -154,6 +154,14 @@ public class GameFlowManager : MonoBehaviour
                 continue;
             }
 
+            //예외처리
+            if(defenseFlowDataList.datas[stage].defenseFlowDataArr[i].timeFlowIndexArr.Length <= arrPointer[i] ||
+            defenseFlowDataList.datas[stage].defenseFlowDataArr[i].enemyFlowIndexArr.Length <= arrPointer[i])
+            {
+                finWaveArr[i] = true;
+                continue;
+            }
+
             //마지막 인덱스일 경우
             if (finWaveArr[i])
                 continue;
